@@ -28,7 +28,7 @@ void UI::noStrip() {
 
 void UI::askForInput() {
 
-	std::cout << "Please input the type of Plane and Airport's ID:";
+	std::cout << "Please input the type of Plane and Airport's ID: ";
 
 }
 std::string UI::takeAirplaneInput() {

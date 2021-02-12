@@ -9,7 +9,7 @@
 #include"Airport.h"
 #include"UI.h"
 
-
+struct AirportManager{
 void addNewAirport(std::string airportID);
 
 void addExistingAirport(std::string airportID, Airport* airport);
@@ -25,5 +25,5 @@ void checkAirportAndAirplane(std::string airplaneType, std::string airportID);
 
 void userInput();
 
-
-
+std::map<std::string, Airport*> Airports;//map of all airports 
+};

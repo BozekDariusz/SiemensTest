@@ -2,22 +2,22 @@
 
 #include"AirportManager.h"
 
-	std::map<std::string, Airport*> Airports;//map of all airports 
+	
 
-	void addNewAirport(std::string airportID) {//make a check to not override existing airport. maybe overload that function?
+	void AirportManager::addNewAirport(std::string airportID) {//make a check to not override existing airport. maybe overload that function?
 
 		Airport* airport = new Airport();
 		Airports.insert({ airportID,airport });
 
 	}
 
-	void addExistingAirport(std::string airportID, Airport * airport) {//make a check to not override existing airport.maybe overload that function?
+	void AirportManager::addExistingAirport(std::string airportID, Airport * airport) {//make a check to not override existing airport.maybe overload that function?
 
 		Airports.insert({ airportID,airport });
 
 	}
 
-	void deleteAirport(std::string airportID) {// delete airport when sure that it is the only place it is used 
+	void AirportManager::deleteAirport(std::string airportID) {// delete airport when sure that it is the only place it is used 
 		auto exists = Airports.find(airportID);
 		if (exists != Airports.end()) {
 			delete exists->second;
@@ -25,14 +25,14 @@
 		}
 	}
 
-	void removeAirport(std::string airportID) {//remove the airport withouth deleting it if for example it is used somewhere else 
+	void AirportManager::removeAirport(std::string airportID) {//remove the airport withouth deleting it if for example it is used somewhere else 
 		auto exists = Airports.find(airportID);
 		if (exists != Airports.end()) {
 			Airports.erase(exists);
 		}
 	}
 
-	void canLand(std::vector<Strip*> strips) {//bad and not optimized 
+	void AirportManager::canLand(std::vector<Strip*> strips) {//bad and not optimized 
 
 
 		for (size_t i = 0; i < strips.size(); i++) {//find if any stip of given type is open for landing and if it is land
@@ -66,7 +66,7 @@
 
 	}
 
-	void checkAirportAndAirplane(std::string airplaneType, std::string airportID) {
+	void AirportManager::checkAirportAndAirplane(std::string airplaneType, std::string airportID) {
 
 		auto existsAirport = Airports.find(airportID);
 		if (existsAirport != Airports.end()) {//check if the airport is in the database 
@@ -87,7 +87,7 @@
 	}
 
 
-void userInput() {
+void AirportManager::userInput() {
 
 	UI::askForInput();
 	std::string airport = UI::takeAirportInput();
@@ -99,12 +99,12 @@ void userInput() {
 
 
 int main() {
-
-	addNewAirport("LGW");
-	addNewAirport("EMA");
-	addNewAirport("MAN");
+	AirportManager manager;
+	manager.addNewAirport("LGW");
+	manager.addNewAirport("EMA");
+	manager.addNewAirport("MAN");
 	while (1) {
-		userInput();
+		manager.userInput();
 	}
 	
 }
