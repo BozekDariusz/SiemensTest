@@ -1,9 +1,4 @@
-#include <time.h>
-#include<map>
-#include<vector>
-#include<string>
-#include<iostream>
-#include <Windows.h>
+
 
 #include"AirportManager.h"
 
@@ -108,6 +103,7 @@ int main() {
 	addNewAirport("LGW");
 	addNewAirport("EMA");
 	addNewAirport("MAN");
+	deleteAirport("LGW");
 	while (1) {
 		userInput();
 	}
