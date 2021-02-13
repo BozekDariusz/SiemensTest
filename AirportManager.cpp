@@ -6,9 +6,9 @@
 #include"UI.h"
 
 AirportManager::AirportManager() {
-	addAirport(Airport(Airport::LGW));
-	addAirport(Airport(Airport::EMA));
-	addAirport(Airport(Airport::MAN));
+	addAirport(Airport(Airport::airportName::LGW));
+	addAirport(Airport(Airport::airportName::EMA));
+	addAirport(Airport(Airport::airportName::MAN));
 }
 
 void AirportManager::addAirport(Airport airport) {//make a check to not override existing airport. maybe overload that function?
@@ -46,7 +46,7 @@ void AirportManager::checkAirport(std::pair<Airport::airportName, Strip::planeTy
 void AirportManager::work() {
 
 	
-	checkAirport(UI::userInput());//FIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIX
+	checkAirport(UI::userInput());
 }
 
 

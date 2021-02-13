@@ -12,7 +12,7 @@ class Strip {
 	clock_t getTimeInSeconds();
 
 public:
-	enum planeType
+	enum class planeType
 	{
 		WrongType,
 		Big,

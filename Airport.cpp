@@ -4,8 +4,8 @@
 
 Airport::Airport(airportName name) {
 	id = name;
-	addStrip(Strip::Big, 60);
-	addStrip(Strip::Light, 30);
+	addStrip(Strip::planeType::Big, 60);
+	addStrip(Strip::planeType::Light, 30);
 
 }
 

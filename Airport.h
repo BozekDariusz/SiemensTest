@@ -14,7 +14,7 @@ class Airport {
 
 public:
 
-	enum airportName {
+	enum class airportName {
 
 		WrongName,
 		LGW,
