@@ -1,28 +1,35 @@
 #pragma once
 #include<map>
 #include<vector>
-#include<string>
 
 #include"Strip.h"
 
+enum airportName {
 
+	LGW,
+	EMA,
+	MAN
+
+};
 
 
 class Airport {
 
 
+	void canLand(std::vector<Strip>& strips);
+
 public:
 
-	std::map<std::string, std::vector<Strip*>> Strips; // map of all strips that the airport has 
-	
-	Airport();
+	std::map<planeType, std::vector<Strip>> Strips;
 
-	~Airport();
+	airportName id;
 
+	Airport(airportName name);
 
-	void addStrip(std::string planeType, int timeToReady);
+	void addStrip(planeType plane, int timeToReady);
 
+	void removeStrip(planeType plane);
 
-	void deleteStrip(std::string planeType);
+	void checkAirplane(planeType plane);
 
 };

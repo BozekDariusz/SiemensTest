@@ -1,8 +1,8 @@
 #pragma once
 
-#include<string>
 #include<iostream>
 #include <Windows.h>
+#include<string>
 
 namespace UI {
 
@@ -15,6 +15,8 @@ namespace UI {
 	void noStrip();
 
 	void askForInput();
+
+	std::pair<std::string, std::string> userInput();
 
 	std::string takeAirplaneInput();
 

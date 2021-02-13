@@ -2,11 +2,33 @@
 
 #include <time.h>
 
+#include"UI.h"
+
+enum planeType
+{
+	Big,
+	Light
+};
 
 class Strip {
+
+	clock_t timeOfLanding;
+
+
+	clock_t getTimeInSeconds();
+
 public:
-	Strip(int timer);
-	clock_t timeOfLanding; // when last plane landed 
-	int timeToReady; // how long before next plane can land 
+
+
+	planeType stripType;
+
+
+	int timeUntilNextPlaneCanLand;
+
+	Strip(planeType plane, int timer);
+
+	bool isFreeForLanding();
+
+	void land();
 
 };

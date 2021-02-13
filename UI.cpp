@@ -22,7 +22,7 @@ void UI::noAirport() {
 
 void UI::noStrip() {
 
-	std::cout << "Airplane type not in database, try different airplane or check your spelling" << std::endl;
+	std::cout << "Strip of such type not in database, try different airplane type or check your spelling" << std::endl;
 
 }
 
@@ -32,16 +32,25 @@ void UI::askForInput() {
 
 }
 std::string UI::takeAirplaneInput() {
-
 	std::string  airplane;
-	std::cin >> airplane ;
+	std::cin >> airplane;
 	return airplane;
 
 }
 std::string UI::takeAirportInput() {
 
 	std::string airport;
-	std::cin >>  airport;
+	std::cin >> airport;
 	return airport;
+
+}
+
+std::pair<std::string, std::string> UI::userInput() {
+
+
+	askForInput();
+	std::string airport = takeAirportInput();
+	std::string strip = takeAirplaneInput();
+	return std::make_pair(airport, strip);
 
 }

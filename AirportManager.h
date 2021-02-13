@@ -2,35 +2,28 @@
 #include <time.h>
 #include<map>
 #include<vector>
-#include<string>
 #include<iostream>
 #include <Windows.h>
 
+
 #include"Airport.h"
-#include"UI.h"
 
-class AirportManager{
+class AirportManager {
 
-
-	void canLand(std::vector<Strip*> strips);
-
-	void checkAirportAndAirplane(std::string airplaneType, std::string airportID);
-
-
-
-	std::map<std::string, Airport*> Airports;//map of all airports 
+	void checkAirport(std::pair<airportName, planeType> airportAndPlaneInfo);
+	std::map<airportName, Airport> Airports;
 
 public:
 
-void addNewAirport(std::string airportID);
 
-void addExistingAirport(std::string airportID, Airport* airport);
+	AirportManager();
 
-void deleteAirport(std::string airportID); 
+	void addAirport(Airport airport);
 
-void removeAirport(std::string airportID);
 
-void userInput();
+	void removeAirport(airportName airportID);
+
+	void work();
 
 
 
