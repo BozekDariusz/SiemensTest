@@ -2,10 +2,13 @@
 
 #include"AirportManager.h"
 
+
+#include"UI.h"
+
 AirportManager::AirportManager() {
-	addAirport(Airport(LGW));
-	addAirport(Airport(EMA));
-	addAirport(Airport(MAN));
+	addAirport(Airport(Airport::LGW));
+	addAirport(Airport(Airport::EMA));
+	addAirport(Airport(Airport::MAN));
 }
 
 void AirportManager::addAirport(Airport airport) {//make a check to not override existing airport. maybe overload that function?
@@ -17,7 +20,7 @@ void AirportManager::addAirport(Airport airport) {//make a check to not override
 
 
 
-void AirportManager::removeAirport(airportName airportID) {
+void AirportManager::removeAirport(Airport::airportName airportID) {
 	auto exists = Airports.find(airportID);
 	if (exists != Airports.end()) {
 		Airports.erase(exists);
@@ -26,7 +29,7 @@ void AirportManager::removeAirport(airportName airportID) {
 
 
 
-void AirportManager::checkAirport(std::pair<airportName, planeType> airportAndPlaneInfo) {
+void AirportManager::checkAirport(std::pair<Airport::airportName, Strip::planeType> airportAndPlaneInfo) {
 
 	auto existsAirport = Airports.find(airportAndPlaneInfo.first);
 	if (existsAirport != Airports.end()) {//check if the airport is in the database 
@@ -42,8 +45,8 @@ void AirportManager::checkAirport(std::pair<airportName, planeType> airportAndPl
 
 void AirportManager::work() {
 
-	UI::userInput();
-	checkAirport(std::make_pair(MAN, Light));//FIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIX
+	
+	checkAirport(UI::userInput());//FIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIX
 }
 
 

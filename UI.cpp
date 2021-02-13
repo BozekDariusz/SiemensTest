@@ -31,26 +31,36 @@ void UI::askForInput() {
 	std::cout << "Please input the type of Plane and Airport's ID: ";
 
 }
-std::string UI::takeAirplaneInput() {
+Strip::planeType UI::takeAirplaneInput() {
 	std::string  airplane;
 	std::cin >> airplane;
-	return airplane;
+	Strip::planeType plane;
+	if (airplane == "Big") plane = Strip::planeType::Big;
+	else if (airplane == "Light") plane = Strip::planeType::Light;
+	else plane = Strip::planeType::WrongType;
+	return plane;
 
 }
-std::string UI::takeAirportInput() {
+Airport::airportName UI::takeAirportInput() {
 
 	std::string airport;
 	std::cin >> airport;
-	return airport;
+	Airport::airportName portName;
+	if (airport == "EMA") portName = Airport::airportName::EMA;
+	else if (airport == "LGW") portName = Airport::airportName::LGW;
+	else if (airport == "MAN") portName = Airport::airportName::MAN;
+	else portName = Airport::airportName::WrongName;
+
+	return portName;
 
 }
 
-std::pair<std::string, std::string> UI::userInput() {
+std::pair<Airport::airportName, Strip::planeType> UI::userInput() {
 
 
 	askForInput();
-	std::string airport = takeAirportInput();
-	std::string strip = takeAirplaneInput();
+	Strip::planeType strip = takeAirplaneInput();
+	Airport::airportName airport = takeAirportInput();
 	return std::make_pair(airport, strip);
 
 }

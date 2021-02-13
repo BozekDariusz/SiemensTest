@@ -4,13 +4,7 @@
 
 #include"Strip.h"
 
-enum airportName {
 
-	LGW,
-	EMA,
-	MAN
-
-};
 
 
 class Airport {
@@ -20,16 +14,25 @@ class Airport {
 
 public:
 
-	std::map<planeType, std::vector<Strip>> Strips;
+	enum airportName {
+
+		WrongName,
+		LGW,
+		EMA,
+		MAN
+
+	};
+
+	std::map<Strip::planeType, std::vector<Strip>> Strips;
 
 	airportName id;
 
 	Airport(airportName name);
 
-	void addStrip(planeType plane, int timeToReady);
+	void addStrip(Strip::planeType plane, int timeToReady);
 
-	void removeStrip(planeType plane);
+	void removeStrip(Strip::planeType plane);
 
-	void checkAirplane(planeType plane);
+	void checkAirplane(Strip::planeType plane);
 
 };

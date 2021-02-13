@@ -10,8 +10,8 @@
 
 class AirportManager {
 
-	void checkAirport(std::pair<airportName, planeType> airportAndPlaneInfo);
-	std::map<airportName, Airport> Airports;
+	void checkAirport(std::pair<Airport::airportName, Strip::planeType> airportAndPlaneInfo);
+	std::map<Airport::airportName, Airport> Airports;
 
 public:
 
@@ -21,7 +21,7 @@ public:
 	void addAirport(Airport airport);
 
 
-	void removeAirport(airportName airportID);
+	void removeAirport(Airport::airportName airportID);
 
 	void work();
 

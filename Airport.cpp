@@ -1,10 +1,11 @@
 #include"Airport.h"
 
+#include"UI.h"
 
 Airport::Airport(airportName name) {
 	id = name;
-	addStrip(Big, 60);
-	addStrip(Light, 30);
+	addStrip(Strip::Big, 60);
+	addStrip(Strip::Light, 30);
 
 }
 
@@ -21,7 +22,7 @@ void Airport::canLand(std::vector<Strip>& strips) {//bad and not optimized //che
 }
 
 
-void Airport::checkAirplane(planeType plane) {//check if this airport can support plane of given type 
+void Airport::checkAirplane(Strip::planeType plane) {//check if this airport can support plane of given type 
 
 
 	auto existsStrip = Strips.find(plane);
@@ -37,7 +38,7 @@ void Airport::checkAirplane(planeType plane) {//check if this airport can suppor
 
 
 
-void Airport::addStrip(planeType plane, int timeToReady) {
+void Airport::addStrip(Strip::planeType plane, int timeToReady) {
 
 	auto existsStrip = Strips.find(plane);//check if that type of strip is already added to the database and if it is add another entry 
 	if (existsStrip != Strips.end()) {
@@ -51,7 +52,7 @@ void Airport::addStrip(planeType plane, int timeToReady) {
 }
 
 
-void Airport::removeStrip(planeType plane) { //only deleting last strip of given type if there are more than one
+void Airport::removeStrip(Strip::planeType plane) { //only deleting last strip of given type if there are more than one
 
 	auto existsStrip = Strips.find(plane);
 

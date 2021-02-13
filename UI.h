@@ -4,6 +4,8 @@
 #include <Windows.h>
 #include<string>
 
+#include"Airport.h"
+
 namespace UI {
 
 	void confirmLanding();
@@ -16,10 +18,12 @@ namespace UI {
 
 	void askForInput();
 
-	std::pair<std::string, std::string> userInput();
+	std::pair<Airport::airportName, Strip::planeType> userInput();
 
-	std::string takeAirplaneInput();
+	Strip::planeType takeAirplaneInput();
 
-	std::string takeAirportInput();
+	Airport::airportName takeAirportInput();
+
+	
 
 }

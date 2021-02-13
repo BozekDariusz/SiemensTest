@@ -2,13 +2,7 @@
 
 #include <time.h>
 
-#include"UI.h"
 
-enum planeType
-{
-	Big,
-	Light
-};
 
 class Strip {
 
@@ -18,6 +12,12 @@ class Strip {
 	clock_t getTimeInSeconds();
 
 public:
+	enum planeType
+	{
+		WrongType,
+		Big,
+		Light
+	};
 
 
 	planeType stripType;
