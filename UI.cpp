@@ -6,8 +6,6 @@ void UI::confirmLanding() {
 
 }
 
-
-
 void UI::countDown(int timer) {
 
 	std::cout << "Plane will be able to land in: " << timer << std::endl;
@@ -28,9 +26,10 @@ void UI::noStrip() {
 
 void UI::askForInput() {
 
-	std::cout << "Please input the type of Plane and Airport's ID: ";
+	std::cout << "Please input the type of Plane(e.g. Big, Light) and Airport's ID(e.g. MAN, LGW, EMA): ";
 
 }
+
 Strip::planeType UI::takeAirplaneInput() {
 	std::string  airplane;
 	std::cin >> airplane;
@@ -41,6 +40,7 @@ Strip::planeType UI::takeAirplaneInput() {
 	return plane;
 
 }
+
 Airport::airportName UI::takeAirportInput() {
 
 	std::string airport;

@@ -1,14 +1,9 @@
 #pragma once
 #include<map>
 #include<vector>
-
 #include"Strip.h"
 
-
-
-
 class Airport {
-
 
 	void canLand(std::vector<Strip>& strips);
 

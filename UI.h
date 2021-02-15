@@ -1,9 +1,7 @@
 #pragma once
 
 #include<iostream>
-#include <Windows.h>
 #include<string>
-
 #include"Airport.h"
 
 namespace UI {
@@ -23,7 +21,5 @@ namespace UI {
 	Strip::planeType takeAirplaneInput();
 
 	Airport::airportName takeAirportInput();
-
-	
 
 }

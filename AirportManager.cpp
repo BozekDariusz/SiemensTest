@@ -1,8 +1,4 @@
-
-
 #include"AirportManager.h"
-
-
 #include"UI.h"
 
 AirportManager::AirportManager() {
@@ -18,16 +14,12 @@ void AirportManager::addAirport(Airport airport) {//make a check to not override
 
 }
 
-
-
 void AirportManager::removeAirport(Airport::airportName airportID) {
 	auto exists = Airports.find(airportID);
 	if (exists != Airports.end()) {
 		Airports.erase(exists);
 	}
 }
-
-
 
 void AirportManager::checkAirport(std::pair<Airport::airportName, Strip::planeType> airportAndPlaneInfo) {
 
@@ -42,15 +34,11 @@ void AirportManager::checkAirport(std::pair<Airport::airportName, Strip::planeTy
 
 }
 
-
 void AirportManager::work() {
 
 	
 	checkAirport(UI::userInput());
 }
-
-
-
 
 int main() {
 	AirportManager manager;

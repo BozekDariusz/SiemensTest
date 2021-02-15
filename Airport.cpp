@@ -21,7 +21,6 @@ void Airport::canLand(std::vector<Strip>& strips) {//bad and not optimized //che
 
 }
 
-
 void Airport::checkAirplane(Strip::planeType plane) {//check if this airport can support plane of given type 
 
 
@@ -35,9 +34,6 @@ void Airport::checkAirplane(Strip::planeType plane) {//check if this airport can
 	}
 }
 
-
-
-
 void Airport::addStrip(Strip::planeType plane, int timeToReady) {
 
 	auto existsStrip = Strips.find(plane);//check if that type of strip is already added to the database and if it is add another entry 
@@ -50,7 +46,6 @@ void Airport::addStrip(Strip::planeType plane, int timeToReady) {
 		Strips.insert({ plane,temp });
 	}
 }
-
 
 void Airport::removeStrip(Strip::planeType plane) { //only deleting last strip of given type if there are more than one
 
